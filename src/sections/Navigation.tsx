@@ -1,5 +1,15 @@
 import { useState, useEffect } from 'react';
-import { LayoutGrid, Layers, Briefcase, Mail } from 'lucide-react';
+import { LayoutGrid, Layers, Briefcase, Mail, MessageCircle } from 'lucide-react';
+
+declare global {
+  interface Window {
+    Tawk_API?: {
+      maximize: () => void;
+      hideWidget: () => void;
+      showWidget: () => void;
+    };
+  }
+}
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,8 +51,8 @@ const Navigation = () => {
       {/* ── Desktop Navigation (Top Bar) ─────────────────────────── */}
       <nav
         className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 hidden md:block ${isScrolled
-            ? 'bg-[#0B0C0F]/90 backdrop-blur-sm border-b border-white/5'
-            : 'bg-transparent'
+          ? 'bg-[#0B0C0F]/90 backdrop-blur-sm border-b border-white/5'
+          : 'bg-transparent'
           }`}
       >
         <div className="flex items-center justify-between px-6 lg:px-10 py-4">
@@ -69,6 +79,13 @@ const Navigation = () => {
             >
               START A PROJECT
             </button>
+            <button
+              onClick={() => window.Tawk_API?.maximize()}
+              className="p-2 icon-hover text-cool-gray"
+              aria-label="Live Chat"
+            >
+              <MessageCircle size={20} strokeWidth={2} />
+            </button>
           </div>
         </div>
       </nav>
@@ -93,7 +110,7 @@ const Navigation = () => {
           {/* Active / Primary Tab */}
           <button
             onClick={() => scrollToSection('capabilities', 'explore')}
-            className={`h-full w-[45%] rounded-[26px] flex items-center justify-center gap-2 transition-all duration-300 micro-hover ${activeSection === 'explore' ? 'bg-mint text-[#0B0C0F]' : 'bg-transparent text-cool-gray'
+            className={`h-full w-[38%] rounded-[26px] flex items-center justify-center gap-1.5 transition-all duration-300 micro-hover ${activeSection === 'explore' ? 'bg-mint text-[#0B0C0F]' : 'bg-transparent text-cool-gray'
               }`}
           >
             <LayoutGrid size={18} strokeWidth={2.5} />
@@ -101,7 +118,7 @@ const Navigation = () => {
           </button>
 
           {/* Icon Tabs Group */}
-          <div className="w-[55%] flex justify-around items-center px-2">
+          <div className="w-[62%] flex justify-around items-center px-1">
 
             <button
               onClick={() => scrollToSection('collaboration', 'collaboration')}
@@ -125,6 +142,14 @@ const Navigation = () => {
               aria-label="Contact"
             >
               <Mail size={20} strokeWidth={2} />
+            </button>
+
+            <button
+              onClick={() => window.Tawk_API?.maximize()}
+              className="p-2 icon-hover text-cool-gray"
+              aria-label="Live Chat"
+            >
+              <MessageCircle size={20} strokeWidth={2} />
             </button>
 
           </div>
