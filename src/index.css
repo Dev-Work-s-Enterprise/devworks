@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 18% 4%;
+    --foreground: 220 20% 97%;
+    --card: 220 15% 8%;
+    --card-foreground: 220 20% 97%;
+    --popover: 220 15% 8%;
+    --popover-foreground: 220 20% 97%;
+    --primary: 155 82% 80%;
+    --primary-foreground: 220 18% 4%;
+    --secondary: 248 32% 55%;
+    --secondary-foreground: 220 20% 97%;
+    --muted: 220 12% 15%;
+    --muted-foreground: 222 15% 70%;
+    --accent: 155 82% 80%;
+    --accent-foreground: 220 18% 4%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 12% 18%;
+    --input: 220 12% 18%;
+    --ring: 155 82% 80%;
+    --radius: 0.625rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Typography */
+.font-display {
+  font-family: 'Sora', sans-serif;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Custom Colors - Dark Theme */
+.bg-primary-dark {
+  background-color: #0B0C0F;
+}
+
+.bg-secondary-lavender {
+  background-color: #6B62B8;
+}
+
+.text-mint {
+  color: #A3F7D4;
+}
+
+.bg-mint {
+  background-color: #A3F7D4;
+}
+
+.border-mint {
+  border-color: #A3F7D4;
+}
+
+.text-cool-gray {
+  color: #A7B0C8;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(-0.5deg);
+  }
+  75% {
+    transform: translateY(-12px) rotate(0.5deg);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-15px) translateX(5px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(-8px) translateX(-3px) rotate(-1deg);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+/* Icon Orb Styles - Dark Theme */
+.icon-orb {
+  @apply flex items-center justify-center rounded-xl;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+}
+
+.icon-orb-glow {
+  box-shadow: 0 0 30px rgba(163, 247, 212, 0.1);
+}
+
+/* Button Hover */
+.btn-hover {
+  transition: all 0.2s ease-out;
+}
+
+.btn-hover:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Section Base */
+.section-pinned {
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  /* Mobile: auto height so content doesn't clip */
+  min-height: 100svh;
+}
+
+/* Desktop: enforce 100vh for GSAP pinning to work */
+@media (min-width: 1024px) {
+  .section-pinned {
+    height: 100vh;
+    min-height: unset;
+  }
+}
+
+/* Mobile content wrapper — normal flow, padded */
+.section-mobile-content {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 1.5rem 4rem;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .section-mobile-content {
+    display: none;
+  }
+}
+
+/* Desktop content wrapper — absolutely positioned, GSAP-controlled */
+.section-desktop-content {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .section-desktop-content {
+    display: contents; /* invisible wrapper — children render as direct children */
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0C0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2d36;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3d46;
+}
+
+/* Selection */
+::selection {
+  background: rgba(163, 247, 212, 0.2);
+  color: #F4F6FA;
+}
+
+/* Service Card - Dark */
+.service-card-dark {
+  @apply p-5 rounded-xl transition-all duration-300;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.service-card-dark:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(163, 247, 212, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Tunnel Card - Dark */
+.tunnel-card-dark {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+}
+
+/* Form Card - Dark */
+.form-card-dark {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+}
+
+/* Gradient Text - Mint */
+.gradient-text-mint {
+  background: linear-gradient(135deg, #A3F7D4 0%, #6B62B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Vignette */
+.vignette::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, transparent 0%, transparent 50%, rgba(0,0,0,0.4) 100%);
+  pointer-events: none;
+}
+
+/* Glow Effects */
+.glow-mint {
+  box-shadow: 0 0 40px rgba(163, 247, 212, 0.15);
+}
+
+.glow-purple {
+  box-shadow: 0 0 40px rgba(107, 98, 184, 0.2);
+}
