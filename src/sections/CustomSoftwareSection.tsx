@@ -90,7 +90,7 @@ const CustomSoftwareSection = ({ className = '' }: CustomSoftwareSectionProps) =
         </div>
         <button
           onClick={() => scrollToSection('contact')}
-          className="self-start group flex items-center gap-2 px-5 py-3 bg-mint text-[#0B0C0F] font-mono text-xs font-medium tracking-wider rounded btn-hover"
+          className="self-start group flex items-center gap-2 px-5 py-3 bg-mint text-[#0B0C0F] font-mono text-xs font-medium tracking-wider rounded micro-hover"
         >
           REQUEST A QUOTE
           <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -134,7 +134,7 @@ const CustomSoftwareSection = ({ className = '' }: CustomSoftwareSectionProps) =
           <button
             ref={ctaRef}
             onClick={() => scrollToSection('contact')}
-            className="mt-8 group flex items-center gap-2 px-5 py-3 bg-mint text-[#0B0C0F] font-mono text-xs font-medium tracking-wider rounded btn-hover"
+            className="mt-8 group flex items-center gap-2 px-5 py-3 bg-mint text-[#0B0C0F] font-mono text-xs font-medium tracking-wider rounded micro-hover"
           >
             REQUEST A QUOTE
             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />

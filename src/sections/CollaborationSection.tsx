@@ -137,7 +137,7 @@ const CollaborationSection = ({ className = '' }: CollaborationSectionProps) => 
         <button
           ref={ctaRef}
           onClick={() => scrollToSection('contact')}
-          className="absolute left-[7vw] top-[78vh] group flex items-center gap-2 px-5 py-3 border border-white/20 text-[#F4F6FA] font-mono text-xs font-medium tracking-wider rounded hover:border-mint hover:text-mint transition-colors btn-hover"
+          className="absolute left-[7vw] top-[78vh] group flex items-center gap-2 px-5 py-3 border border-white/20 text-[#F4F6FA] font-mono text-xs font-medium tracking-wider rounded border-hover micro-hover transition-colors"
         >
           MEET THE TEAM
           <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />

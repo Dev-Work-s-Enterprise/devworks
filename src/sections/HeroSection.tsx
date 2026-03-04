@@ -106,18 +106,18 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
           PRECISION<br />ENGINEERING
         </h1>
         <p className="font-mono text-sm tracking-wide text-cool-gray">
-          Bots · Web Apps · Crypto Tools · AI/ML
+          Enterprise Solutions · Web (PWA's) & Mobile Applications · Crypto & Blockchain Integrations · AI/ML & Data Tools · Automation Tools/Workflows · MVP Development · Technical Consulting
         </p>
         <div className="flex flex-wrap gap-4">
           <button
             onClick={() => scrollToSection('capabilities')}
-            className="px-5 py-3 bg-mint text-[#0B0C0F] font-mono text-xs font-medium tracking-wider rounded btn-hover"
+            className="px-5 py-3 bg-mint text-[#0B0C0F] font-mono text-xs font-medium tracking-wider rounded micro-hover"
           >
             VIEW SERVICES
           </button>
           <button
             onClick={() => scrollToSection('contact')}
-            className="px-5 py-3 border border-white/20 text-[#F4F6FA] font-mono text-xs font-medium tracking-wider rounded hover:border-mint hover:text-mint transition-colors btn-hover"
+            className="px-5 py-3 border border-white/20 text-[#F4F6FA] font-mono text-xs font-medium tracking-wider rounded border-hover micro-hover transition-colors"
           >
             START A PROJECT
           </button>
@@ -147,7 +147,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
           ref={subheadlineRef}
           className="absolute left-[7vw] top-[54vh] w-[40vw] font-mono text-sm lg:text-base tracking-wide text-cool-gray"
         >
-          Enterprise Solutions · Web Apps · Crypto Tools · AI/ML · Automation Tools/Workflows · MVP Development · Technical Consulting
+          Enterprise Solutions · Web (PWA's) & Mobile Applications · Crypto & Blockchain Integrations · AI/ML & Data Tools · Automation Tools/Workflows · MVP Development · Technical Consulting
         </p>
         <div ref={ctaRef} className="absolute left-[7vw] top-[64vh] flex flex-wrap gap-4">
           <button

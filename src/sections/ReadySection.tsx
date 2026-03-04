@@ -62,7 +62,7 @@ const ReadySection = ({ className = '' }: ReadySectionProps) => {
         </p>
         <button
           onClick={() => scrollToSection('contact')}
-          className="self-start group flex items-center gap-3 px-6 py-4 bg-mint text-[#0B0C0F] font-mono text-sm font-medium tracking-wider rounded btn-hover"
+          className="self-start group flex items-center gap-3 px-6 py-4 bg-mint text-[#0B0C0F] font-mono text-sm font-medium tracking-wider rounded micro-hover"
         >
           START A PROJECT
           <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -95,7 +95,7 @@ const ReadySection = ({ className = '' }: ReadySectionProps) => {
           <button
             ref={ctaRef}
             onClick={() => scrollToSection('contact')}
-            className="mt-10 group flex items-center gap-3 px-6 py-4 bg-mint text-[#0B0C0F] font-mono text-sm font-medium tracking-wider rounded btn-hover"
+            className="mt-10 group flex items-center gap-3 px-6 py-4 bg-mint text-[#0B0C0F] font-mono text-sm font-medium tracking-wider rounded micro-hover"
           >
             START A PROJECT
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

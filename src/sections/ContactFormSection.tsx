@@ -344,7 +344,7 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-mint text-[#0B0C0F] font-mono text-sm font-medium tracking-wider rounded btn-hover disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-mint text-[#0B0C0F] font-mono text-sm font-medium tracking-wider rounded micro-hover disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none disabled:active:scale-100 disabled:hover:filter-none"
             >
               {status === 'sending' ? (
                 <><Loader2 size={16} className="animate-spin" /> SENDING…</>

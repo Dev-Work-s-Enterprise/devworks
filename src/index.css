@@ -33,15 +33,18 @@
   * {
     @apply border-border;
   }
-  
+
   html {
     scroll-behavior: auto;
+    overflow-x: hidden;
+    max-width: 100%;
   }
-  
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
+    max-width: 100%;
   }
 }
 
@@ -81,27 +84,36 @@
 
 /* Floating Animation */
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
   }
+
   25% {
     transform: translateY(-8px) rotate(1deg);
   }
+
   50% {
     transform: translateY(-4px) rotate(-0.5deg);
   }
+
   75% {
     transform: translateY(-12px) rotate(0.5deg);
   }
 }
 
 @keyframes float-slow {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) translateX(0) rotate(0deg);
   }
+
   33% {
     transform: translateY(-15px) translateX(5px) rotate(2deg);
   }
+
   66% {
     transform: translateY(-8px) translateX(-3px) rotate(-1deg);
   }
@@ -179,7 +191,8 @@
 
 @media (min-width: 1024px) {
   .section-desktop-content {
-    display: contents; /* invisible wrapper — children render as direct children */
+    display: contents;
+    /* invisible wrapper — children render as direct children */
   }
 }
 
@@ -250,7 +263,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(ellipse at center, transparent 0%, transparent 50%, rgba(0,0,0,0.4) 100%);
+  background: radial-gradient(ellipse at center, transparent 0%, transparent 50%, rgba(0, 0, 0, 0.4) 100%);
   pointer-events: none;
 }
 
@@ -261,4 +274,54 @@
 
 .glow-purple {
   box-shadow: 0 0 40px rgba(107, 98, 184, 0.2);
+}
+
+/* ── Tawk.to live chat: prevent horizontal overflow on mobile ────────────── */
+#tawkchat-container,
+#tawkchat-minified-container,
+.tawk-min-container,
+.tawk-custom-color {
+  max-width: 100vw !important;
+  overflow: hidden !important;
+}
+
+/* ── Global Micro-Interactions ───────────────────────────────────────────── */
+
+/* Glass pill container */
+.glass-pill {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Standard button hover micro-interaction */
+.micro-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.micro-hover:hover {
+  transform: translateY(-2px) scale(1.02);
+  filter: brightness(1.1);
+}
+
+.micro-hover:active {
+  transform: translateY(0) scale(0.96);
+  filter: brightness(0.9);
+}
+
+/* Icon / Nav Link specific hover */
+.icon-hover {
+  transition: all 0.2s ease-out;
+}
+
+.icon-hover:hover {
+  color: #F4F6FA;
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 8px rgba(163, 247, 212, 0.4));
+  /* mint glow */
+}
+
+.icon-hover:active {
+  transform: translateY(0) scale(0.9);
 }

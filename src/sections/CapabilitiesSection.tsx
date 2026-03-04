@@ -106,7 +106,7 @@ const CapabilitiesSection = ({ className = '' }: CapabilitiesSectionProps) => {
         </div>
         <button
           onClick={() => scrollToSection('collaboration')}
-          className="self-start group flex items-center gap-2 px-5 py-3 border border-white/20 text-[#F4F6FA] font-mono text-xs font-medium tracking-wider rounded hover:border-mint hover:text-mint transition-colors btn-hover"
+          className="self-start group flex items-center gap-2 px-5 py-3 border border-white/20 text-[#F4F6FA] font-mono text-xs font-medium tracking-wider rounded border-hover micro-hover transition-colors"
         >
           SEE OUR PROCESS
           <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
