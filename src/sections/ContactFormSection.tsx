@@ -164,11 +164,11 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
           </p>
 
           <div className="mt-10 space-y-4">
-            <a href="mailto:devworks.ent@gmail.com" className="flex items-center gap-3 text-[#F4F6FA] hover:text-mint transition-colors group">
+            <a href="mailto:inquiries@dev-works.online" className="flex items-center gap-3 text-[#F4F6FA] hover:text-mint transition-colors group">
               <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-mint/10 transition-colors">
                 <Mail size={18} className="text-mint" />
               </div>
-              <span className="text-sm">devworks.ent@gmail.com</span>
+              <span className="text-sm">inquiries@dev-works.online</span>
             </a>
             <a href="tel:+2348081617247" className="flex items-center gap-3 text-[#F4F6FA] hover:text-mint transition-colors group">
               <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-mint/10 transition-colors">
@@ -334,7 +334,7 @@ const ContactFormSection = ({ className = '' }: ContactFormSectionProps) => {
                 </span>
                 {errorDetail && (
                   <span className="pl-6 text-red-400/60">
-                    Check the browser console for full details, or email us at devworks.ent@gmail.com
+                    Check the browser console for full details, or email us at inquiries@dev-works.online
                   </span>
                 )}
               </div>
